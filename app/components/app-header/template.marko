@@ -1,0 +1,62 @@
+<!-- top navbar-->
+<header class="topnavbar-wrapper" id="mainheader" w-bind>
+	<!-- START Top Navbar-->
+	<nav role="navigation" class="navbar topnavbar">
+		<!-- START navbar header-->
+		<div class="navbar-header">
+			<a href="/app" class="navbar-brand" style="color: white; background-color: white">
+				<div class="brand-logo">
+					<span alt="Siemens" class="img-responsive siemenslogo"></span>
+				</div>
+			</a>
+			<div class="pull-right" style="margin: 16px 20px;font-size:18px;">
+				Omneo | <span class="brand-color">${data.user.email}</span> <i class="fa fa-user user-panel-activate"></i>
+
+				<div class="user-panel hidden hidden-xs">
+					<div class="arrow-box-top-right">
+						<div class="row user-panel-info">
+							<div class="col-xs-3 tenant">
+								<p>${data.user.tenant}</p>
+							</div>
+							<div class="col-xs-6 email">
+								<p>${data.user.email}</p>
+							</div>
+							<div class="col-xs-3 edit-link">
+								<a href="Manage" class="btn btn-primary">Edit Profile</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END navbar header-->
+
+		<!-- START Nav wrapper-->
+		<div class="nav-wrapper">
+			<ul class="nav navbar-nav navbar-right hidden-xs" style="padding-right: .6em;">
+				<!-- START Settings button-->
+				<li style="position: relative;">
+					<i class="settings-panel-activate fa fa-lg fa-cog"></i>
+
+					<div class="settings-panel hidden hidden-xs">
+						<div class="arrow-box-top-right">
+							<ul class="settings-menu-list">
+								<li><a href="#" id="toggleDisplaySettings" title="Display Settings">Display Settings</a></li>
+								<li><a href="#" title="Send Feedback" class="disabled">Send Feedback</a></li>
+								<li><a href="/Portal/onlinehelpoutput/welcome.aspx" title="Help" target="_blank">Help</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<!-- END Settings menu-->
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li for(tenant in data.user.tenants)>
+					<a href="http://localhost/oab/${tenant}/page/open/Home" style="padding-left: 10px; padding-right: 10px;">${tenant}</a>
+				</li>
+			</ul>
+		</div>
+		<!-- END Nav wrapper-->
+	</nav>
+</header>

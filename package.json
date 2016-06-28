@@ -1,0 +1,35 @@
+{
+  "name": "omneo",
+  "version": "1.0.0",
+  "description": "The Omneo app",
+  "main": "app/client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "browserify -t markoify app/js/client.js -o app/js/client.bundle.js",
+    "dev": "sane \"npm run bundle\" app --glob=\"!**/{*.marko.js,*.bundle.js}\""
+  },
+  "keywords": [
+    "omneo",
+    "siemens"
+  ],
+  "author": "Jon Wolfe",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "<4.0.0",
+    "browserify": "latest",
+    "font-awesome": "<5.0.0",
+    "jquery": "<3.0.0",
+    "marko": "<4.0.0",
+    "marko-widgets": "<7.0.0",
+    "markoify": "latest",
+    "simple-line-icons": "<3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-airbnb-base": "latest",
+    "eslint-plugin-html": "latest",
+    "eslint-plugin-import": "latest",
+    "sane": "latest"
+  }
+}

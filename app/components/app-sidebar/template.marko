@@ -1,0 +1,29 @@
+<aside class="aside" id="mainmenu">
+    <!-- START Sidebar (left)-->
+    <div class="aside-inner">
+        <nav class="sidebar">
+            <!-- START sidebar nav-->
+            <ul class="nav">
+                <li class="nav-heading">
+                    <span>Menu</span>
+                </li>
+                <li for(item in data.navItems)>
+                    <a href="#${data.item.id}" title="${data.item.title}" data-toggle="collapse">
+                        <em class$="fa ${data.item.icon}"/>
+                        <span>${data.item.name}</span>
+                    </a>
+                    <ul id="${data.item.id}" class="nav sidebar-subnav collapse">
+                        <li class="sidebar-subnav-header">${data.item.name}</li>
+                        <li for(child in item.children)>
+                            <a href="${data.item.href}" title="${data.item.title}">
+                                <span>${data.item.name}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- END sidebar nav-->
+        </nav>
+    </div>
+    <!-- END Sidebar (left)-->
+</aside>

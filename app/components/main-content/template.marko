@@ -1,0 +1,80 @@
+<section id="mainsection">
+	<!-- Page content-->
+	<div class="content-wrapper">
+
+		<div>
+			<div class="container-fluid">
+
+				<div id="childcontent">
+
+					<template is="dom-if" if="[[user.canAccessAction.visualize]]">
+						<h1 class="page-header">Create a New Workbook Based on a Data Source</h1>
+
+						<div class="row">
+							<div class="col-md-4">
+								<div class="jumbotron">
+									<h2>KPI Definition</h2>
+									<p class="lead">Use an existing KPI Definition as the data source for a visualization workbook.</p>
+									<p style="text-align: right"><a class="btn btn-primary btn-lg" href="TableauKPIDefinition">GO</a></p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="jumbotron">
+									<h2>Analytics Configuration</h2>
+									<p class="lead">Use an existing Analytics Configuration as the data source for a visualization workbook.</p>
+									<p style="text-align: right"><a class="btn btn-primary btn-lg" href="TableauAnalytics">GO</a></p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="jumbotron">
+									<h2>Bulk Export</h2>
+									<p class="lead">Use an existing Bulk Export as the data source for a visualization workbook.</p>
+									<p style="text-align: right"><a class="btn btn-primary btn-lg" href="TableauBulkExtract">GO</a></p>
+								</div>
+							</div>
+						</div>
+					</template>
+
+					<template is="dom-if" if="[[eitherOr(user.canAccessAction.manage, user.canAccessAction.dashboard)]]">
+						<h1 class="page-header">Management</h1>
+
+						<div class="row">
+							<template is="dom-if" if="[[user.canAccessAction.manage]]">
+								<div class="col-md-4">
+									<div class="jumbotron">
+										<h2>Manage Projects</h2>
+										<p class="lead">Manage your visualization library.</p>
+										<p style="text-align: right"><a class="btn btn-primary btn-lg" href="TableauProjects">GO</a></p>
+									</div>
+								</div>
+							</template>
+
+							<template is="dom-if" if="[[user.canAccessAction.manage]]">
+								<div class="col-md-4">
+									<div class="jumbotron">
+										<h2>Manage Bulk Exports</h2>
+										<p class="lead">Manage your Bulk Export visualization workbooks.</p>
+										<p style="text-align: right"><a class="btn btn-primary btn-lg" href="TableauBulkExportExtracts">GO</a></p>
+									</div>
+								</div>
+							</template>
+
+							<template is="dom-if" if="[[user.canAccessAction.dashboard]]">
+								<div class="col-md-4">
+									<div class="jumbotron">
+										<h2>Manage Dashboards</h2>
+										<p class="lead">Manage your Dashboard visualization workbooks.</p>
+										<p style="text-align: right"><a class="btn btn-primary btn-lg" href="Dashboard">GO</a></p>
+									</div>
+								</div>
+							</template>
+						</div>
+					</template>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</section>

@@ -1,0 +1,80 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/src/tags/toggle-switch.html">
+<link rel="import" href="/src/tags/theme-preview.html">
+
+<dom-module id="settings-sidebar">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+		</style>
+
+		<aside class="offsidebar">
+			<!-- START Off Sidebar (right) -->
+			<nav>
+				<div role="tabpanel" style="padding-top: 60px;">
+					<div class="tab-content">
+
+						<div id="app-settings" role="tabpanel" class="tab-pane fade in active">
+							<h3 class="text-center text-thin">Display Settings</h3>
+
+							<div class="p">
+								<h4 class="text-muted text-thin">View</h4>
+
+								<div class="clearfix">
+									<p class="pull-left">Expand to Fullscreen</p>
+									<toggle-swtich class="pull-right"></toggle-swtich>
+								</div>
+							</div>
+
+							<div class="p">
+								<h4 class="text-muted text-thin">Layout</h4>
+
+								<div class="clearfix">
+									<p class="pull-left">Fixed</p>
+									<toggle-swtich class="pull-right"></toggle-swtich>
+								</div>
+
+								<div class="clearfix">
+									<p class="pull-left">Collapsed</p>
+									<toggle-swtich class="pull-right"></toggle-swtich>
+								</div>
+
+								<div class="clearfix">
+									<p class="pull-left">Boxed</p>
+									<toggle-swtich class="pull-right"></toggle-swtich>
+								</div>
+
+							</div>
+
+							<div class="p">
+								<h4 class="text-muted text-thin">Themes</h4>
+
+								<div class="table-grid mb">
+									<template is="dom-repeat" items="[[themes]]">
+										<theme-preview class="col mb" theme="[[item]]"></theme-preview>
+									</template>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<!-- END Off Sidebar (right) -->
+
+		</aside>
+	</template>
+
+	<script>
+		Polymer( {
+			is: 'settings-sidebar',
+			properties: {
+				themes: {
+					type: Array,
+					value: [ 'default', 'bluestone' ],
+				},
+			},
+		} );
+	</script>
+</dom-module>
