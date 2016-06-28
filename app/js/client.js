@@ -1,4 +1,4 @@
-const appWidget = require( '../components/app-root/widget.js' )
+const appWidget = require( '../components/app-root' )
 					.render( window.app.state )
 					.prependTo( document.body )
 					.getWidget();

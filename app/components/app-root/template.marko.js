@@ -1,8 +1,8 @@
 function create(__helpers) {
   var __widgetType = {
-          name: "/omneo$1.0.0/app/components/app-root/widget",
+          name: "/omneo$1.0.0/app/components/app-root/index",
           def: function() {
-            return require("./widget");
+            return require("./");
           }
         },
       __markoWidgets = require("marko-widgets"),
@@ -15,8 +15,7 @@ function create(__helpers) {
       w_widget = __loadTag(require("marko-widgets/taglib/widget-tag")),
       attr = __helpers.a,
       attrs = __helpers.as,
-      loadTemplate = __helpers.l,
-      app_header_template = loadTemplate(require.resolve("../app-header/template.marko"));
+      app_header = __loadTag(require("../app-header"));
 
   return function render(data, out) {
     w_widget({
@@ -31,7 +30,7 @@ function create(__helpers) {
             attrs(__widgetAttrs(widget)) +
             "> ");
 
-          app_header_template.render({
+          app_header({
               user: data.user
             }, out);
 
